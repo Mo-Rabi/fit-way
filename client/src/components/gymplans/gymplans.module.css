@@ -1,0 +1,40 @@
+.todoContainer{
+  border: 1px solid rgb(65, 113, 233);
+  margin: 50px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  border-radius: 5%;
+  position: relative;
+  left: 30%;
+  background-color: white;
+}
+.inputTask{
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 5%;
+}
+.listContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.maincontainer{
+
+height:200vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  
+}
+.liToDoList{
+  text-align: start;
+  color: rgb(123, 165, 255);
+}
+li{
+  color:rgba(4, 29, 54, 0.691)23, 23, 163;
+}
+
+
+
+

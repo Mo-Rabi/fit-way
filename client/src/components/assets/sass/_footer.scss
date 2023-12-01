@@ -1,0 +1,121 @@
+//
+// footer.scss
+//
+
+/*********************************/
+/*         Footer                */
+/*===============================*/
+
+.footer {
+    background: $footer;
+    position: relative;
+    color: $footer-text;
+
+    .footer-py-60 {
+        padding: 60px 0;        
+    }
+
+    .footer-py-30 {
+        padding: 30px 0;        
+    }
+    
+    .logo-footer {
+        font-size: 22px;
+        &:focus {
+            outline: none;
+        }
+    }
+    .footer-head {
+        letter-spacing: 1px;         
+        font-weight: 500;
+        color: $footer-head-color;
+    }
+    .foot-subscribe {
+        .form-control {
+            background-color: $footer-subscribe-input-color;
+            border: 1px solid $footer-subscribe-input-color;
+            color: $footer-subscribe-input-text-color !important;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+        &.foot-white {
+            .form-control {
+                color: $footer-text;
+            }
+        }
+        input{
+            &::placeholder{
+                color: $footer-text;
+            }
+        }
+    } 
+    .text-foot {
+        color: $footer-text;
+    }
+    .footer-list {
+        margin-bottom: 0;
+        li {
+            margin-bottom: 10px;
+            a{
+                transition: all 0.5s ease;
+                &:hover {
+                    color: lighten($footer-text, 20%);
+                }
+            }   
+            &:last-child{
+                margin-bottom: 0;
+            }         
+        }
+    }
+    .footer-border,
+    .footer-bar {
+        border-top: 1px solid lighten($footer, 5%);
+    }
+    .border {
+        border-color: lighten($footer, 5%) !important;
+    }
+
+    //Footer Light
+    &.footer-light {
+        background: $light;
+        color: $muted;
+        .footer-head {
+            color: $dark;
+        }
+
+        .foot-subscribe {
+            .form-control {
+                background-color: $light;
+                border: 1px solid $border-color;
+                color: $light;
+            }
+            &.foot-white {
+                .form-control {
+                    color: $footer-text;
+                }
+            }
+            input{
+                &::placeholder{
+                    color: $footer-text;
+                }
+            }
+        }
+
+        .border {
+            border-color: $border-color !important;
+        }
+        .text-foot {
+            color: $muted;
+        }
+        .footer-list {
+            li {
+                a{
+                    &:hover {
+                        color: $gray-700;
+                    }
+                }   
+            }
+        }
+    }
+}

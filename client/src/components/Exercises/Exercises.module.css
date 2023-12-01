@@ -1,0 +1,29 @@
+#ingredient {
+    padding: 12px 20px;
+    width: 100%;
+    border: none;
+    outline: none !important;
+    background-color: rgb(216, 233, 243);
+    height: 50px;
+}
+
+#ingredient::placeholder {
+    color: #000000;
+}
+
+.searchBtn {
+    position: absolute;
+    right: 1px;
+    outline: none !important;
+    padding: 10px 20px;
+    height: 50px;
+}
+
+.searchForm {
+    position: relative;
+    max-width: 600px;
+    margin: 0px auto;
+}
+.resultBtn{
+    background-color: rgb(216, 233, 243);
+}
