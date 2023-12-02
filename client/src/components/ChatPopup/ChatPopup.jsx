@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
+import { jwtDecode } from "jwt-decode";
 
 export default function ChatPopup({ trainerProp, userProp }) {
   //!Navigate to the most recent chat message
@@ -18,6 +19,7 @@ export default function ChatPopup({ trainerProp, userProp }) {
   const { register, handleSubmit, reset } = useForm();
   const userType = localStorage.getItem("userType");
   const userToken = localStorage.getItem("token");
+  const userId = jwtDecode(userToken).id;
   const trainerId = useParams().id;
   //! Retrieve trainer data
 
@@ -100,6 +102,15 @@ export default function ChatPopup({ trainerProp, userProp }) {
   getSenderData();
 
   //! Filter Messages data to get messages between the logged-in user and the trainer user is currently standing over. check messages for sender is the user and recipient is the trainer (and vice versa)
+  //? Messages sent by user
+  let messagesSentByUser = chatDataQuery.data?.filter((userMessage) => {
+    return userMessage.senderId === userId;
+  });
+
+  //? Messages sent by trainer
+  let messagesSentByTrainer = chatDataQuery.data?.filter((trainerMessage) => {
+    return trainerMessage.senderId === trainerId;
+  });
 
   //Loading state
   if (chatDataQuery.isLoading) return <h1>Loading...</h1>;
@@ -178,60 +189,40 @@ export default function ChatPopup({ trainerProp, userProp }) {
           overflowY: "auto",
         }}
       >
-        {/*//! Trainer Messages */}
-        <li>
-          <div className="d-inline-block">
-            <div className="d-flex chat-type mb-3">
-              <div className="position-relative">
-                <img
-                  src="assets/images/client/02.jpg"
-                  className="avatar avatar-md-sm rounded-circle border shadow"
-                  alt
-                />
-                <i className="mdi mdi-checkbox-blank-circle text-success on-off align-text-bottom" />
-              </div>
-              <div className="chat-msg" style={{ maxWidth: 500 }}>
-                <p className="text-muted small msg px-3 py-2 bg-light rounded mb-0">
-                  Hey Calvin
-                </p>
-                <small className="text-muted msg-time">
-                  <i className="uil uil-clock-nine me-1" />
-                  59 min ago
-                </small>
-              </div>
-            </div>
-          </div>
-        </li>
-
         {/*//! User Messages */}
         {/* {chatDataQuery.data ? (
          chatDataQuery.data.length ? ( */}
-
         {chatDataQuery.data && chatDataQuery.data.length ? (
           chatDataQuery.data.map((message, index) => (
-            <li className="chat-right" key={index}>
-              <div className="d-inline-block">
-                <div className="d-flex chat-type mb-3">
-                  <div className="position-relative chat-user-image">
-                    <img
-                      src={senderPhoto}
-                      className="avatar avatar-md-sm rounded-circle border shadow"
-                      alt
-                    />
-                    <i className="mdi mdi-checkbox-blank-circle text-success on-off align-text-bottom" />
-                  </div>
-                  <div className="chat-msg" style={{ maxWidth: 500 }}>
-                    <p className="text-muted small msg px-3 py-2 bg-light rounded mb-1">
-                      {message.message}
-                    </p>
-                    <small className="text-muted msg-time">
-                      <i className="uil uil-clock-nine me-1" />
-                      {new Date(message.messageDate).toLocaleString()}
-                    </small>
+            <li
+              key={index}
+              className={message.senderId === userId ? "chat-right" : ""}
+            >
+              {(message.senderId === userId &&
+              message.recipientId === trainerId) || (message.senderId === trainerId &&
+                message.recipientId === userId) ? (
+                <div className="d-inline-block">
+                  <div className="d-flex chat-type mb-3">
+                    <div className="position-relative chat-user-image">
+                      <img
+                        src={message.senderPicture}
+                        className="avatar avatar-md-sm rounded-circle border shadow"
+                        alt=""
+                      />
+                      <i className="mdi mdi-checkbox-blank-circle text-success on-off align-text-bottom" />
+                    </div>
+                    <div className="chat-msg" style={{ maxWidth: 500 }}>
+                      <p className="text-muted small msg px-3 py-2 bg-light rounded mb-1">
+                        {message.message}
+                      </p>
+                      <small className="text-muted msg-time">
+                        <i className="uil uil-clock-nine me-1" />
+                        {new Date(message.messageDate).toLocaleString()}
+                      </small>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div ref={messagesEndRef} />
+              ) : null}
             </li>
           ))
         ) : (
@@ -242,7 +233,35 @@ export default function ChatPopup({ trainerProp, userProp }) {
             </p>
           </li>
         )}
+
+        {/* //! Trainer Messages
+          {messagesSentByTrainer.map((message, index) => (
+          <li>
+            <div className="d-inline-block">
+              <div className="d-flex chat-type mb-3">
+                <div className="position-relative">
+                  <img
+                    src={message.senderPicture}
+                    className="avatar avatar-md-sm rounded-circle border shadow"
+                    alt
+                  />
+                  <i className="mdi mdi-checkbox-blank-circle text-success on-off align-text-bottom" />
+                </div>
+                <div className="chat-msg" style={{ maxWidth: 500 }}>
+                  <p className="text-muted small msg px-3 py-2 bg-light rounded mb-0">
+                    {message.message}
+                  </p>
+                  <small className="text-muted msg-time">
+                    <i className="uil uil-clock-nine me-1" />
+                    {new Date(message.messageDate).toLocaleString()}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </li>
+        ))} */}
       </ul>
+
       <div className="p-1 rounded-bottom shadow">
         <div className="row">
           <div className="col">
