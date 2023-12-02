@@ -53,7 +53,7 @@ export default function Navbar() {
             <li className="list-inline-item mb-0">
               <Link
                 to={"/users/login"}
-               // data-bs-toggle="offcanvas"
+                // data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasRight"
                 aria-controls="offcanvasRight"
               >
@@ -85,10 +85,10 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to={"user/plan"} className="sub-menu-item">
-                Services
+              <Link to={"BMI"} className="sub-menu-item">
+                BMI Calculator
               </Link>
-          </li>
+            </li>
 
             <li className="has-submenu parent-parent-menu-item">
               <a href="/user/searchForMore">Nutrition & Exercises</a>
@@ -130,11 +130,14 @@ export default function Navbar() {
               </ul>
             </li>
             <li>
-              <Link to={"/trainers/register"} href="corporate-services.html" className="sub-menu-item text-danger">
-                {!token?"Become A Trainer":null}
+              <Link
+                to={"/trainers/register"}
+                href="corporate-services.html"
+                className="sub-menu-item text-danger"
+              >
+                {!token ? "Become A Trainer" : null}
               </Link>
             </li>
-
           </ul>
         </div>
       </div>

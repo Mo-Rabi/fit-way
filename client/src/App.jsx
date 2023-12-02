@@ -12,7 +12,7 @@ import TrainerProfile from "./components/TrainerProfile/TrainerProfile";
 import TrainerSettings from "./components/TrainerSettings/TrainerSettings";
 import ViewTrainer from "./components/ViewTrainer/ViewTrainer";
 import Home from "./components/Home/Home";
-import NotFound from './components/NotFound/NotFound'
+import NotFound from "./components/NotFound/NotFound";
 //import Cloudinary from "./components/Cloudinary/Cloudinary";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./components/assets/css/style.min.css";
@@ -27,8 +27,7 @@ import "./components/assets/js/easy_background";
 import "./components/assets/js/plugins.init";
 import VerificationSuccess from "./components/VerificationSuccess/VerificationSuccess";
 import TrainerChat from "./components/TrainerChat/TrainerChat";
-
-
+import BmiCalculator from "./components/BmiCalculator/BmiCalculator";
 
 function App() {
   const routes = createBrowserRouter([
@@ -45,7 +44,7 @@ function App() {
         //   path: "user/searchForMore",
         //   element: <SearchForMore />,
         // },
-        
+
         // {
         //   path: "user/chatOfUser",
         //   element: <ChatOfUser />,
@@ -100,6 +99,7 @@ function App() {
 
         { path: "user/settings", element: <UserSettings /> },
         { path: "trainer/chat", element: <TrainerChat /> },
+        { path: "BMI", element: <BmiCalculator /> },
 
         { path: "trainer/settings", element: <TrainerSettings /> },
         { path: "verification/success", element: <VerificationSuccess /> },
