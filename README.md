@@ -4,6 +4,8 @@ A full stack MERN Application to connect Personal Trainers with anyone intereste
 **Features**
  ## Chat between Personal Trainers and Trainees
 ![](https://github.com/Mo-Rabi/fit-way/assets/69902912/378df590-d9bd-4ee3-aa2c-ba8cf71482b3)
+
+## Chat between users and trainers
 ![](https://github.com/Mo-Rabi/fit-way/assets/69902912/c088c0fa-6697-43be-b16b-1c7f0f1e5c89)
 
  ## Landing page:
