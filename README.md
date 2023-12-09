@@ -4,7 +4,7 @@ A full stack MERN Application to connect Personal Trainers with anyone intereste
 **Features**
 
 - Landing page:
-(https://github.com/Mo-Rabi/fit-way/assets/69902912/637763cf-fa8e-4811-8f32-056752760163)
+https://github.com/Mo-Rabi/fit-way/assets/69902912/637763cf-fa8e-4811-8f32-056752760163
 (https://github.com/Mo-Rabi/fit-way/assets/69902912/1efe9dff-8433-4d88-9cc0-d5979637c227)
 (https://github.com/Mo-Rabi/fit-way/assets/69902912/5c7e691e-66cf-46c5-abd0-650b213b8814)
 
