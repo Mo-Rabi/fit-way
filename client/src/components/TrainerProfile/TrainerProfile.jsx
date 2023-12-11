@@ -400,11 +400,11 @@ export default function TrainerProfile() {
                         <div className="flex-1">
                           <h6 className="text-primary mb-0">Skills :</h6>
                           <a href="" className="text-muted">
-                            **Placeholder**
+                            Gain mass
                           </a>
                           ,{" "}
                           <a href="" className="text-muted">
-                            **Placeholder**
+                             Lose weight
                           </a>
                         </div>
                       </div>
@@ -417,11 +417,11 @@ export default function TrainerProfile() {
                           </a>
                           ,{" "}
                           <a href="" className="text-muted">
-                            Japanese
+                          Spanish
                           </a>
                           ,{" "}
                           <a href="" className="text-muted">
-                            Chinese
+                            Italian
                           </a>
                         </div>
                       </div>
@@ -439,7 +439,7 @@ export default function TrainerProfile() {
                         <Gift className="me-3" />
                         <div className="flex-1">
                           <h6 className="text-primary mb-0">Birthday :</h6>
-                          <p className="text-muted mb-0"> **Placeholder**</p>
+                          <p className="text-muted mb-0"> Feb 5th 1996</p>
                         </div>
                       </div>
                       <div className="d-flex align-items-center mt-3">
@@ -521,7 +521,7 @@ export default function TrainerProfile() {
                     <div className="card-body content">
                       <h5>
                         <a href="" className="card-title title text-dark">
-                          Design your apps in your own way
+                          Lose 10kg this summer!
                         </a>
                       </h5>
                       <div className="post-meta d-flex justify-content-between mt-3">
@@ -553,7 +553,7 @@ export default function TrainerProfile() {
                         <i className="uil uil-trainer" /> Calvin Carlo
                       </small>
                       <small className="date">
-                        <i className="uil uil-calendar-alt" /> 25th June 2021
+                        <i className="uil uil-calendar-alt" /> 25th June 2022
                       </small>
                     </div>
                   </div>
@@ -568,7 +568,7 @@ export default function TrainerProfile() {
                     <div className="card-body content">
                       <h5>
                         <a href="" className="card-title title text-dark">
-                          How apps is changing the IT world
+                          Fastest way to gain mass
                         </a>
                       </h5>
                       <div className="post-meta d-flex justify-content-between mt-3">

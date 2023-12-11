@@ -31,7 +31,7 @@ root.render(
         <App />
         <Toaster position="top-right" richColors closeButton />
       </GoogleOAuthProvider>
-      <ReactQueryDevtools />
+      {/* <ReactQueryDevtools /> */}
     </QueryClientProvider>
   </React.StrictMode>
 );

@@ -32,7 +32,9 @@ function BmiCalculator() {
 
   return (
     <div className="container p-5 mt-5 mb-5">
-      <h1>FitWay BMI Calculator</h1>
+      <h1>
+        <span className="text-danger">FitWay</span> BMI Calculator
+      </h1>
       <div className="input-container">
         <label htmlFor="height">Enter Your Height (cm):</label>
         <input

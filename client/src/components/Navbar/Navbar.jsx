@@ -90,9 +90,9 @@ export default function Navbar() {
               </Link>
             </li>
 
-            <li className="has-submenu parent-parent-menu-item">
+            {/* <li className="has-submenu parent-parent-menu-item">
               <a href="/user/searchForMore">Nutrition & Exercises</a>
-            </li>
+            </li> */}
             <li className="has-submenu parent-parent-menu-item">
               <a href="#">Pages</a>
               <span className="menu-arrow" />

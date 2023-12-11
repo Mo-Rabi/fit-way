@@ -123,8 +123,8 @@ export default function ChatPopup({ trainerProp, userProp }) {
       style={{
         position: "fixed",
         marginLeft: "72%",
-        marginTop: "10%",
-        zIndex: 1,
+        marginTop: "14%",
+        zIndex: 1000,
       }}
     >
       <div className="d-flex justify-content-between border-bottom px-3">
@@ -199,7 +199,8 @@ export default function ChatPopup({ trainerProp, userProp }) {
               className={message.senderId === userId ? "chat-right" : ""}
             >
               {(message.senderId === userId &&
-              message.recipientId === trainerId) || (message.senderId === trainerId &&
+                message.recipientId === trainerId) ||
+              (message.senderId === trainerId &&
                 message.recipientId === userId) ? (
                 <div className="d-inline-block">
                   <div className="d-flex chat-type mb-3">

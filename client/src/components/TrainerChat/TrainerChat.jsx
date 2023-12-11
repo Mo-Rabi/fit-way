@@ -190,8 +190,9 @@ export default function TrainerChat() {
   });
 
   //! for the top portion of chat
-  let selectedUserData = selectedUsersData?.find(user => user.senderId === selectedUserId);
-
+  let selectedUserData = selectedUsersData?.find(
+    (user) => user.senderId === selectedUserId
+  );
 
   console.log("SELECTED USERS DATA: ", selectedUsersData);
   //! Filter messages by separating messages according to each user************************************
@@ -691,18 +692,19 @@ export default function TrainerChat() {
                   ))}
                 </ul>
                 <div className="p-2 rounded-bottom shadow">
-                  <div className="col">
+                  <div className="">
                     <form onSubmit={handleSubmit(onSubmit)}>
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control d-inline-block"
                         placeholder="Enter Message..."
                         {...register("message")}
                       />
 
                       <button
                         type="submit"
-                        className="btn btn-icon text-primary me-3"
+                        className="btn btn-icon text-primary position-absolute mt-1"
+                        style={{ marginLeft: "-5%" }}
                       >
                         <i className="uil uil-message" />
                       </button>

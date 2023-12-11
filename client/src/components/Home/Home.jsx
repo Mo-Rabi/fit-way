@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./Home.module.css";
 import bg from "../assets/images/gym/bg.jpg";
 import about from "../assets/images/gym/about01.jpg";
@@ -38,35 +38,13 @@ import client6 from "../assets/client/06.jpg";
 import blog1 from "../assets/images/blog/01.jpg";
 import blog2 from "../assets/images/blog/02.jpg";
 import blog3 from "../assets/images/blog/03.jpg";
-import { Modal, Button, Card } from "react-bootstrap";
-import axios from "axios";
+import '../assets/js/tiny-slider'
+import '../assets/js/app'
+import '../assets/js/plugins.init'
+import '../assets/js/easy_background'
+import '../assets/js/'
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-
-  const handleModalShow = (photo) => {
-    setSelectedPhoto(photo);
-    setShowModal(true);
-  };
-
-  const handleModalClose = () => {
-    setSelectedPhoto(null);
-    setShowModal(false);
-  };
-  const [allTrainersData, getTrainersData] = useState([]);
-
-  async function getData() {
-    let { data } = await axios.get(
-      "https://jsonplaceholder.typicode.com/users"
-    );
-    console.log(data);
-    getTrainersData(data);
-  }
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <div>
       {/* Hero Start */}
@@ -175,549 +153,104 @@ export default function Home() {
         <div className="container-fluid px-0">
           <div className="row g-0 row-cols-lg-5 row-cols-md-3 row-cols-2 mt-4 pt-2">
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img1,
-                    title: "Consistency is Key",
-                    description:
-                      "Establishing a consistent workout routine for long-term success.",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img1} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/01.jpg" className="lightbox" title>
+                    <img src={img1} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
-
             {/*end col*/}
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img2,
-                    title: "Balanced Nutrition Matters:",
-                    description: "Fuel your body for optimal performance.",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img2} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/02.jpg" className="lightbox" title>
+                    <img src={img2} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
             {/*end col*/}
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img3,
-                    title: "Listen to Your Body",
-                    description: "Rest is crucial for recovery and growth",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img3} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/03.jpg" className="lightbox" title>
+                    <img src={img3} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
-            <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img4,
-                    title: "Mix Up Your Routine",
-                    description: "Keep workouts challenging and interesting.",
-                  })
-                }
-              >
-                <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img4} className="img-fluid" alt="" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/*end col*/}
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
-
             {/*end col*/}
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img5,
-                    title: "Hydration is Non-Negotiable",
-                    description: "Water is essential for peak performance.",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img5} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/04.jpg" className="lightbox" title>
+                    <img src={img4} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
-
             {/*end col*/}
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img6,
-                    title: "Set Realistic Goals",
-                    description: "Achievable targets keep you motivated",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img6} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/05.jpg" className="lightbox" title>
+                    <img src={img5} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
-
             {/*end col*/}
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img7,
-                    title: "Prioritize Form Over Weight",
-                    description: "Proper form prevents injuries.",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img7} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/06.jpg" className="lightbox" title>
+                    <img src={img6} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
             {/*end col*/}
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img8,
-                    title: "Quality Sleep Aids Recovery",
-                    description: "Rest is vital for muscle repair",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img8} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/07.jpg" className="lightbox" title>
+                    <img src={img7} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
             {/*end col*/}
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img9,
-                    title: "Celebrate Small Wins",
-                    description: "Acknowledge progress along the way",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img9} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/08.jpg" className="lightbox" title>
+                    <img src={img8} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
             {/*end col*/}
             <div className="col">
-              {/* Clicking on this "card" will show the modal */}
-              <div
-                className="card rounded-0"
-                onClick={() =>
-                  handleModalShow({
-                    src: img10,
-                    title: "Find Joy in the Journey",
-                    description: "Enjoy the process of self-improvement",
-                  })
-                }
-              >
+              <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="#" className="lightbox" title>
-                    {/* Image can be rendered here if you want it to be clickable */}
-                    <img src={img10} className="img-fluid" alt="" />
+                  <a href="assets/images/gym/09.jpg" className="lightbox" title>
+                    <img src={img9} className="img-fluid" alt />
                   </a>
                 </div>
               </div>
             </div>
-
-            {showModal && (
-              <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                dialogClassName="modal-dialog modal-dialog-scrollable"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-primary">
-                    {selectedPhoto && selectedPhoto.title}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  {selectedPhoto && (
-                    <>
-                      {/* Image is rendered only inside the Modal */}
-                      <img
-                        src={selectedPhoto.src}
-                        className="img-fluid"
-                        alt=""
-                      />
-                      <p>{selectedPhoto.description}</p>
-                    </>
-                  )}
-                  {/* Your additional content goes here */}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="primary" onClick={handleModalClose}>
-                    Close
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            )}
-
+            {/*end col*/}
+            <div className="col">
+              <div className="card rounded-0">
+                <div className="card-body p-0">
+                  <a href="assets/images/gym/10.jpg" className="lightbox" title>
+                    <img src={img10} className="img-fluid" alt />
+                  </a>
+                </div>
+              </div>
+            </div>
             {/*end col*/}
           </div>
           {/*end row*/}
@@ -1142,43 +675,220 @@ export default function Home() {
             </div>
             {/*end col*/}
           </div>
-          {/*end rowllllllllllllllllllllllllllllllllllllllllll*/}
+          {/*end row*/}
           <div className="row">
-            {allTrainersData.slice(0, 4).map((trainer, index) => (
-              <div key={index} className="col-lg-3 col-md-6 mt-4 pt-2">
-                <div className="card team team-primary text-center bg-transparent border-0">
-                  <div className="card-body p-0">
-                    <div className="position-relative">
-                      {/* Use the provided image URLs */}
-                      <img
-                        src={
-                          index === 0
-                            ? "https://img.freepik.com/free-photo/athletic-shirtless-young-male-fitness-model-holds-dumbbell-with-light-isolated-dark-background_613910-20.jpg"
-                            : index === 1
-                            ? "https://i.pinimg.com/originals/6d/fc/70/6dfc7063164c24e796cf0d1e42c3e85d.jpg"
-                            : index === 2
-                            ? "https://i.pinimg.com/736x/fe/15/d7/fe15d7d389f40cf922fa68cb0a200794.jpg"
-                            : "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLTu8AEDTs3ueK3xU6Bto_Q6qvObinYi0T1MB9hnc6dd-zzJGHM0Mztu1zYXUD0Jc9Jr5Xd8d8IFqyqLqW4MIdepOYFg6f2clKjeA8cT1lLgjfHMoui-BZx57x_CAtvy5C2XzEXOEei8QxzVICE38js489yS3jSaiB46Jd-u2smpyuABcnaXaF8AqkJQ/s900/Analis%20Cruz%20fitness%20journey%20(2).webp"
-                        }
-                        className="img-fluid rounded"
-                        alt={`Trainer ${index + 1}`}
-                      />
-                      <ul className="list-unstyled mb-0 team-icon">
-                        {/* Your social media icons go here */}
-                      </ul>
-                    </div>
-                    <div className="content pt-3 pb-3">
-                      <h5 className="mb-0">
-                        <a href="javascript:void(0)" className="name text-dark">
-                          {trainer.name || `Trainer ${index + 1}`}
+            <div className="col-lg-3 col-md-6 mt-4 pt-2">
+              <div className="card team team-primary text-center bg-transparent border-0">
+                <div className="card-body p-0">
+                  <div className="position-relative">
+                    <img src={team1} className="img-fluid rounded-pill" alt />
+                    <ul className="list-unstyled mb-0 team-icon">
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="facebook" className="icons" />
                         </a>
-                      </h5>
-                      <small className="designation text-muted">Trainer</small>
-                    </div>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="instagram" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="twitter" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="linkedin" className="icons" />
+                        </a>
+                      </li>
+                    </ul>
+                    {/*end icon*/}
+                  </div>
+                  <div className="content pt-3 pb-3">
+                    <h5 className="mb-0">
+                      <a href="javascript:void(0)" className="name text-dark">
+                        Ronny Jofra
+                      </a>
+                    </h5>
+                    <small className="designation text-muted">Trainer</small>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+            {/*end col*/}
+            <div className="col-lg-3 col-md-6 mt-4 pt-2">
+              <div className="card team team-primary text-center bg-transparent border-0">
+                <div className="card-body p-0">
+                  <div className="position-relative">
+                    <img src={team4} className="img-fluid rounded-pill" alt />
+                    <ul className="list-unstyled mb-0 team-icon">
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="facebook" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="instagram" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="twitter" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="linkedin" className="icons" />
+                        </a>
+                      </li>
+                    </ul>
+                    {/*end icon*/}
+                  </div>
+                  <div className="content pt-3 pb-3">
+                    <h5 className="mb-0">
+                      <a href="javascript:void(0)" className="name text-dark">
+                        Micheal Carlo
+                      </a>
+                    </h5>
+                    <small className="designation text-muted">Trainer</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/*end col*/}
+            <div className="col-lg-3 col-md-6 mt-4 pt-2">
+              <div className="card team team-primary text-center bg-transparent border-0">
+                <div className="card-body p-0">
+                  <div className="position-relative">
+                    <img src={team2} className="img-fluid rounded-pill" alt />
+                    <ul className="list-unstyled mb-0 team-icon">
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="facebook" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="instagram" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="twitter" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="linkedin" className="icons" />
+                        </a>
+                      </li>
+                    </ul>
+                    {/*end icon*/}
+                  </div>
+                  <div className="content pt-3 pb-3">
+                    <h5 className="mb-0">
+                      <a href="javascript:void(0)" className="name text-dark">
+                        Aliana Rosy
+                      </a>
+                    </h5>
+                    <small className="designation text-muted">Trainer</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/*end col*/}
+            <div className="col-lg-3 col-md-6 mt-4 pt-2">
+              <div className="card team team-primary text-center bg-transparent border-0">
+                <div className="card-body p-0">
+                  <div className="position-relative">
+                    <img src={team3} className="img-fluid rounded-pill" alt />
+                    <ul className="list-unstyled mb-0 team-icon">
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="facebook" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="instagram" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="twitter" className="icons" />
+                        </a>
+                      </li>
+                      <li className="list-inline-item">
+                        <a
+                          href="javascript:void(0)"
+                          className="btn btn-primary btn-pills btn-sm btn-icon"
+                        >
+                          <i data-feather="linkedin" className="icons" />
+                        </a>
+                      </li>
+                    </ul>
+                    {/*end icon*/}
+                  </div>
+                  <div className="content pt-3 pb-3">
+                    <h5 className="mb-0">
+                      <a href="javascript:void(0)" className="name text-dark">
+                        Sofia Razaq
+                      </a>
+                    </h5>
+                    <small className="designation text-muted">Trainer</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/*end col*/}
           </div>
           {/*end row*/}
         </div>

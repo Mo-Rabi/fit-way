@@ -13,6 +13,7 @@ import ChatPopup from "../ChatPopup/ChatPopup";
 import StarIcon from "@mui/icons-material/Star";
 import { useForm, Controller } from "react-hook-form";
 import { Toaster, toast } from "sonner";
+import PayPal from "../PayPal/PayPal";
 
 export default function ViewTrainer() {
   //! Get trainer ID from Params if the logged in was user
@@ -187,7 +188,7 @@ export default function ViewTrainer() {
           style={{
             width: "4%",
             position: "fixed",
-            margin: "45% 95%",
+            margin: "49% 95%",
             cursor: "pointer",
             zIndex: 1,
           }}
@@ -250,20 +251,24 @@ export default function ViewTrainer() {
               Rating: {trainer.rating}
               <FontAwesomeIcon icon={faStar} style={{ color: "#f9be1a" }} />
             </p>
-            <p className="text-white fw-bold">Trainees no.: {5}</p>
+            <p className="text-white fw-bold"> Subscribers: {5}</p>
             <button className="btn btn-success" onClick={handleBookNowBtn}>
               Book now!
             </button>
           </div>
         </div>
+        <div className="w-25" style={{ marginLeft: "25%", marginTop: "-7%" }}>
+          <PayPal />
+        </div>
+
         {token ? (
-          <div className="row d-flex justify-content-center mb-5 mt-5">
-            <div className="col-md-10 col-lg-8 col-xl-6">
+          <div className="row d-flex justify-content-center mb-5">
+            <div className="col-md-10 col-lg-8 col-xl-5">
               <div className="text-white mb-5">
                 <p>Previous Reviews:</p>
                 {/* //TODO At first try, can't read length error (refresh after login would maybe solve it) */}
-                {reviews.length != 0
-                  ? reviews.map((review, index) => (
+                {reviews?.length != 0
+                  ? reviews?.map((review, index) => (
                       <div
                         key={index}
                         className="tiny-slide wow animate__animated animate__fadeInUp"
