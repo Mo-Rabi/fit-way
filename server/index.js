@@ -8,9 +8,50 @@ import reviewRoutes from "./modules/reviews/review.routes.js";
 import "dotenv/config.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import axios from "axios";
+import fetch from "node-fetch";
+import "dotenv/config";
 // import fse from "fs-extra";
-
 const app = express();
+
+//! <<< PayPal Start >>>
+const base = "https://api-m.sandbox.paypal.com";
+// test route
+app.get("/test", async (req, res) => {
+  const data = await generateAccessTokenFetch();
+  console.log(data);
+  res.json(data);
+});
+
+// axios version of generating access token
+async function generateAccessToken() {
+  const response = await axios({
+    url: base + "/v1/oauth2/token",
+    method: "post",
+    data: "grant_type=client_credentials",
+    auth: {
+      username: CLIENT_ID,
+      password: APP_SECRET,
+    },
+  });
+  return response.data;
+}
+
+// fetch version
+async function generateAccessTokenFetch() {
+  const response = await fetch(base + "/v1/oauth2/token", {
+    method: "post",
+    body: "grant_type=client_credentials",
+    headers: {
+      Authorization:
+        "Basic " + Buffer.from(CLIENT_ID + ":" + APP_SECRET).toString("base64"),
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+
+//! <<< PayPal End >>>
 
 const port = 4000;
 

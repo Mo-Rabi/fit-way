@@ -54,14 +54,13 @@ const trainerSchema = new mongoose.Schema(
         sender: String,
         recipient: String,
         text: String,
-        timeStamp: Date
+        timeStamp: Date,
       },
-    ]
+    ],
   },
   {
     timestamps: true,
-  },
-
+  }
 );
 
 const trainerModel = mongoose.model("Trainer", trainerSchema);

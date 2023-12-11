@@ -38,13 +38,11 @@ import client6 from "../assets/client/06.jpg";
 import blog1 from "../assets/images/blog/01.jpg";
 import blog2 from "../assets/images/blog/02.jpg";
 import blog3 from "../assets/images/blog/03.jpg";
-import '../assets/js/tiny-slider'
-import '../assets/js/app'
-import '../assets/js/plugins.init'
-import '../assets/js/easy_background'
-import '../assets/js/'
+import Modal from "react-bootstrap/Modal";
 
 export default function Home() {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <div>
       {/* Hero Start */}
@@ -92,10 +90,11 @@ export default function Home() {
                 <img src={about} className="rounded-md shadow img-fluid" alt />
                 <div className="play-icon">
                   <a
-                    href="#!"
+                    // href="#"
                     data-type="youtube"
-                    data-id="yba7hPeTSjk"
+                    data-id="HQfF5XRVXjU"
                     className="play-btn lightbox border-0"
+                    style={{ cursor: "pointer" }}
                   >
                     <i className="mdi mdi-play text-primary rounded-circle shadow" />
                   </a>
@@ -103,6 +102,7 @@ export default function Home() {
               </div>
             </div>
             {/*end col*/}
+
             <div className="col-lg-7 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
               <div className="section-title ms-lg-5">
                 <h4 className="title mb-4">
@@ -155,8 +155,78 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/01.jpg" className="lightbox" title>
-                    <img src={img1} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img1}
+                      className="img-fluid"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModal"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img1}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/*end col*/}
+
+            <div className="col">
+              <div className="card rounded-0">
+                <div className="card-body p-0">
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img2}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img2}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -165,8 +235,38 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/02.jpg" className="lightbox" title>
-                    <img src={img2} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img3}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals2"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals2"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img3}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals2"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -175,8 +275,38 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/03.jpg" className="lightbox" title>
-                    <img src={img3} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img4}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals3"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals3"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img4}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals3"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -185,8 +315,38 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/04.jpg" className="lightbox" title>
-                    <img src={img4} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img5}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals4"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals4"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img5}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals4"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -195,8 +355,38 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/05.jpg" className="lightbox" title>
-                    <img src={img5} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img6}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals5"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals5"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img6}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals5"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -205,8 +395,38 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/06.jpg" className="lightbox" title>
-                    <img src={img6} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img7}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals6"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals6"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img7}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals6"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -215,8 +435,38 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/07.jpg" className="lightbox" title>
-                    <img src={img7} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img8}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals7"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals7"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img8}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals7"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -225,8 +475,38 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/08.jpg" className="lightbox" title>
-                    <img src={img8} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img9}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals8"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals8"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img9}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals8"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -235,18 +515,38 @@ export default function Home() {
             <div className="col">
               <div className="card rounded-0">
                 <div className="card-body p-0">
-                  <a href="assets/images/gym/09.jpg" className="lightbox" title>
-                    <img src={img9} className="img-fluid" alt />
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/*end col*/}
-            <div className="col">
-              <div className="card rounded-0">
-                <div className="card-body p-0">
-                  <a href="assets/images/gym/10.jpg" className="lightbox" title>
-                    <img src={img10} className="img-fluid" alt />
+                  <a className="lightbox">
+                    {/* trigger modal */}
+
+                    <img
+                      src={img10}
+                      className="img-fluid"
+                      alt
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals9"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* Modal */}
+                    <div
+                      className="modal fade"
+                      id="exampleModals9"
+                      tabIndex={-1}
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                          {" "}
+                          <img
+                            src={img10}
+                            className="img-fluid"
+                            alt
+                            data-bs-toggle="modals"
+                            data-bs-target="#exampleModals9"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -684,35 +984,23 @@ export default function Home() {
                     <img src={team1} className="img-fluid rounded-pill" alt />
                     <ul className="list-unstyled mb-0 team-icon">
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="facebook" className="icons" />
+                        <a href="javascript:void(0)" className="text-primary ms-1">
+                          <i className="mdi mdi-facebook" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="instagram" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary ms-1">
+                          <i className="mdi mdi-instagram" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="twitter" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary ms-1">
+                          <i className="mdi mdi-twitter" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="linkedin" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary">
+                          <i className="mdi mdi-linkedin" />{" "}
                         </a>
                       </li>
                     </ul>
@@ -737,35 +1025,23 @@ export default function Home() {
                     <img src={team4} className="img-fluid rounded-pill" alt />
                     <ul className="list-unstyled mb-0 team-icon">
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="facebook" className="icons" />
+                        <a href="javascript:void(0)" className="text-primary ms-1">
+                          <i className="mdi mdi-facebook" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="instagram" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary ms-1">
+                          <i className="mdi mdi-instagram" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="twitter" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary ms-1">
+                          <i className="mdi mdi-twitter" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="linkedin" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary">
+                          <i className="mdi mdi-linkedin" />{" "}
                         </a>
                       </li>
                     </ul>
@@ -790,35 +1066,23 @@ export default function Home() {
                     <img src={team2} className="img-fluid rounded-pill" alt />
                     <ul className="list-unstyled mb-0 team-icon">
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="facebook" className="icons" />
+                        <a href="javascript:void(0)" className="text-primary ms-1">
+                          <i className="mdi mdi-facebook" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="instagram" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary ms-1">
+                          <i className="mdi mdi-instagram" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="twitter" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary ms-1">
+                          <i className="mdi mdi-twitter" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="linkedin" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary">
+                          <i className="mdi mdi-linkedin" />{" "}
                         </a>
                       </li>
                     </ul>
@@ -843,35 +1107,23 @@ export default function Home() {
                     <img src={team3} className="img-fluid rounded-pill" alt />
                     <ul className="list-unstyled mb-0 team-icon">
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="facebook" className="icons" />
+                        <a href="javascript:void(0)" className="text-primary ms-1">
+                          <i className="mdi mdi-facebook" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="instagram" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary ms-1">
+                          <i className="mdi mdi-instagram" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="twitter" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary ms-1">
+                          <i className="mdi mdi-twitter" />{" "}
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a
-                          href="javascript:void(0)"
-                          className="btn btn-primary btn-pills btn-sm btn-icon"
-                        >
-                          <i data-feather="linkedin" className="icons" />
+                        <a href="javascript:void(0)" className=" text-primary">
+                          <i className="mdi mdi-linkedin" />{" "}
                         </a>
                       </li>
                     </ul>
