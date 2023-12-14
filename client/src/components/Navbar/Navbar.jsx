@@ -79,7 +79,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to={"trainers"} className="sub-menu-item">
+              <Link to={"trainers"} href="#" className="sub-menu-item">
                 {" "}
                 Trainers
               </Link>

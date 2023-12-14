@@ -39,6 +39,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { DevTool } from "@hookform/devtools";
 // import UploadForm from "../CloudinaryAPI/UploadForm";
 import CloudinaryWidget from "../CloudinaryWidget/CloudinaryWidget";
+import Spinner from "react-bootstrap/Spinner";
 
 export default function TrainerSettings() {
   // Get QueryClient from the context
@@ -151,7 +152,23 @@ export default function TrainerSettings() {
     }
   };
 
-  if (trainerSettingsQuery.isLoading) return <h1>Loading...</h1>;
+  if (trainerSettingsQuery.isLoading)
+    return (
+      <div
+        className="spinner-container position-absolute w-100 h-100"
+        style={{
+          zIndex: "1000",
+          background: "#B5DEF1",
+        }}
+      >
+        <Spinner
+          animation="grow"
+          variant="primary"
+          style={{ marginTop: "41vh", marginLeft: "45vw" }}
+          className=""
+        />
+      </div>
+    );
   if (trainerSettingsQuery.isError)
     return <pre>{JSON.stringify(trainerSettingsQuery.error)}</pre>;
   // let imageURLValue;
@@ -251,7 +268,7 @@ export default function TrainerSettings() {
                               </li>
                               <li className="list-inline-item">
                                 <Link
-                                  to="/trainer/chatOfTrainer"
+                                  to="/trainer/chat"
                                   className="rounded me-1"
                                   data-bs-toggle="tooltip"
                                   data-bs-placement="bottom"
@@ -384,7 +401,7 @@ export default function TrainerSettings() {
                       </li>
                       <li className="navbar-item account-menu px-0 mt-2">
                         <Link
-                          to={'/trainer/chatOfTrainer'}
+                          to={"/trainer/chatOfTrainer"}
                           className="navbar-link d-flex rounded shadow align-items-center py-2 px-4"
                         >
                           <span className="h4 mb-0">

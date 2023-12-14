@@ -32,6 +32,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { jwtDecode } from "jwt-decode";
 import { toast } from "sonner";
+import Spinner from "react-bootstrap/Spinner";
 
 export default function TrainerChat() {
   //? Track the selected user to display their chat with the trainer
@@ -152,7 +153,23 @@ export default function TrainerChat() {
     },
   });
 
-  if (trainerDataQuery.isLoading) return <h1>Loading...</h1>;
+  if (trainerDataQuery.isFetching)
+    return (
+      <div
+        className="spinner-container position-absolute w-100 h-100"
+        style={{
+          zIndex: "1000",
+          background: "#B5DEF1",
+        }}
+      >
+        <Spinner
+          animation="grow"
+          variant="primary"
+          style={{ marginTop: "41vh", marginLeft: "45vw" }}
+          className=""
+        />
+      </div>
+    );
   if (trainerDataQuery.isError)
     return <pre>{JSON.stringify(trainerDataQuery.error)}</pre>;
 
@@ -288,15 +305,15 @@ export default function TrainerChat() {
                         <div className="col-md-5 text-md-end text-center">
                           <ul className="list-unstyled social-icon social mb-0 mt-4">
                             <li className="list-inline-item me-1">
-                              <a
-                                href=""
+                              <Link
+                                to={"/trainer/profile"}
                                 className="rounded"
                                 data-bs-toggle="tooltip"
                                 data-bs-placement="bottom"
                                 title="Add Friend"
                               >
                                 <i className="uil uil-user-plus align-middle " />
-                              </a>
+                              </Link>
                             </li>
                             <li className="list-inline-item me-1">
                               <Link
@@ -556,9 +573,9 @@ export default function TrainerChat() {
                       style={{ maxHeight: 360, overflowY: "auto" }}
                     >
                       <a
-                        href="#"
                         className={`d-flex chat-list p-2 rounded position-relative`}
                         key={lastMessage._id}
+                        style={{cursor:"pointer"}}
                       >
                         <div className="position-relative">
                           <img

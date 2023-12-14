@@ -10,8 +10,18 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import BarLoader from "react-spinners/BarLoader";
 
+const override = {
+  display: "block",
+  position: "fixed",
+  top: "50vh",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  borderColor: "red",
+};
 export default function Trainers() {
+
   //? Navigate to trainer profile
   const navigate = useNavigate();
 
@@ -47,7 +57,21 @@ export default function Trainers() {
       return trainers;
     },
   });
-  if (allTrainerDataQuery.isLoading) return <h1>Loading...</h1>;
+  if (allTrainerDataQuery.isFetching)
+    return (
+      <div
+        className="spinner-container position-absolute w-100 h-100"
+        style={{ zIndex: "1000", background: "#171c4a" }}
+      >
+        <BarLoader
+          color={"#D3D3D3"}
+          size={150}
+          cssOverride={override}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      </div>
+    );
   if (allTrainerDataQuery.isError)
     return <pre>{JSON.stringify(allTrainerDataQuery.error)}</pre>;
 
@@ -58,7 +82,7 @@ export default function Trainers() {
         background: `url(${bg})`,
       }}
     >
-      {allTrainerDataQuery.data.map(
+      {allTrainerDataQuery.data?.map(
         (trainer, index) => (
           console.log(trainer, index),
           (

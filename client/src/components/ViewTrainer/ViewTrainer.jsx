@@ -14,6 +14,7 @@ import StarIcon from "@mui/icons-material/Star";
 import { useForm, Controller } from "react-hook-form";
 import { Toaster, toast } from "sonner";
 import PayPal from "../PayPal/PayPal";
+import Spinner from "react-bootstrap/Spinner";
 
 export default function ViewTrainer() {
   //! Get trainer ID from Params if the logged in was user
@@ -174,7 +175,23 @@ export default function ViewTrainer() {
   const user = userDataQuery.data;
   console.log("USERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR in Prop:", user);
 
-  if (trainerDataQuery.isLoading) return <h1>Loading...</h1>;
+  if (trainerDataQuery.isLoading)
+    return (
+      <div
+        className="spinner-container position-absolute w-100 h-100"
+        style={{
+          zIndex: "1000",
+          background: "#B5DEF1",
+        }}
+      >
+        <Spinner
+          animation="grow"
+          variant="primary"
+          style={{ marginTop: "41vh", marginLeft: "45vw" }}
+          className=""
+        />
+      </div>
+    );
   if (trainerDataQuery.isError)
     return <pre>{JSON.stringify(trainerDataQuery.error)}</pre>;
 

@@ -28,6 +28,7 @@ import {
   Gitlab,
 } from "react-feather";
 import axios from "axios";
+import Spinner from "react-bootstrap/Spinner";
 
 export default function TrainerProfile() {
   const navigate = useNavigate();
@@ -47,7 +48,22 @@ export default function TrainerProfile() {
     },
   });
 
-  if (trainerDataQuery.isLoading) return <h1>Loading...</h1>;
+  if (trainerDataQuery.isFetching) return (
+    <div
+    className="spinner-container position-absolute w-100 h-100"
+    style={{
+      zIndex: "1000",
+      background: "#B5DEF1",
+    }}
+  >
+    <Spinner
+      animation="grow"
+      variant="primary"
+      style={{ marginTop: "41vh", marginLeft: "45vw" }}
+      className=""
+    />
+  </div>
+  )
   if (trainerDataQuery.isError)
     return <pre>{JSON.stringify(trainerDataQuery.error)}</pre>;
 
