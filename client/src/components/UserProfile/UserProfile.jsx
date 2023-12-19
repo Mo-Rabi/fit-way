@@ -38,7 +38,7 @@ export default function UserProfile() {
   const userDataQuery = useQuery({
     queryKey: ["userData"],
     queryFn: async () => {
-      let { data } = await axios.get("http://localhost:4000/userData");
+      let { data } = await axios.get("https://fitway-backend.onrender.com/userData");
       const userData = data.userData;
       console.log("USER DATA IN PROFILE", userData);
       localStorage.setItem("userData", JSON.stringify(userData));

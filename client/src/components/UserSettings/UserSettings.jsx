@@ -55,7 +55,7 @@ export default function UserSettings() {
   const userSettingsQuery = useQuery({
     queryKey: ["userSettings"],
     queryFn: async () => {
-      let { data } = await axios.get("http://localhost:4000/userData");
+      let { data } = await axios.get("https://fitway-backend.onrender.com/userData");
       const userData = data.userData;
       //console.log("User firstName: ", userData.firstName);
       //firstName = userData.firstName;
@@ -95,7 +95,7 @@ export default function UserSettings() {
   //   queryKey: ["userData"],
   //   queryFn: async () => {
   //     console.log("inside query function");
-  //     let { data } = await axios.get("http://localhost:4000/userData");
+  //     let { data } = await axios.get("https://fitway-backend.onrender.com/userData");
   //     const userData = data.userData;
   //     firstName = userData.firstName
   //     console.log(userData);
@@ -170,7 +170,7 @@ export default function UserSettings() {
     // async request which may result error
     try {
       console.log("Data", data);
-      let response = await axios.patch("http://localhost:4000/user/edit", data);
+      let response = await axios.patch("https://fitway-backend.onrender.com/user/edit", data);
       console.log("Response", response);
       setApiResponse(response.data.message);
     } catch (error) {

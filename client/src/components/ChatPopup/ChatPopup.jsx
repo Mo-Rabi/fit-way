@@ -28,7 +28,7 @@ export default function ChatPopup({ trainerProp, userProp }) {
     queryKey: ["chatData"],
     queryFn: async () => {
       let { data } = await axios.get(
-        `http://localhost:4000/chats/${trainerId}`
+        `https://fitway-backend.onrender.com/chats/${trainerId}`
       );
       console.log("MESSAGES DATA???", data);
       const messagesData = data.allMessages;
@@ -62,7 +62,7 @@ export default function ChatPopup({ trainerProp, userProp }) {
         console.log("DATA TO BEEEZ SENT: ", data);
 
         // Send message details to chats Collection in DB
-        let response = await axios.post("http://localhost:4000/chats/", data);
+        let response = await axios.post("https://fitway-backend.onrender.com/chats/", data);
         console.log("Message sent?", response.data.message);
         //   //** Fetch the reviews again
         chatDataQuery.refetch();
@@ -91,7 +91,7 @@ export default function ChatPopup({ trainerProp, userProp }) {
 
   const getSenderData = async () => {
     try {
-      let response = await axios.get(`http://localhost:4000/${userType}Data`);
+      let response = await axios.get(`https://fitway-backend.onrender.com/${userType}Data`);
       const senderData = response.data.userData;
       setSenderPhoto(senderData?.picture);
       console.log("Sender Photo", senderPhoto);

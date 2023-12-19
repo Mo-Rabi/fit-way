@@ -10,7 +10,7 @@ export default function Exercises() {
   const handleSearch = () => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:4000/user/getExercise?muscle=${searchTerm}`)
+      .get(`https://fitway-backend.onrender.com/user/getExercise?muscle=${searchTerm}`)
       .then((response) => {
         setExercises(response.data);
       })

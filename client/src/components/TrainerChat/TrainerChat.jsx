@@ -61,7 +61,7 @@ export default function TrainerChat() {
     queryKey: ["chatData"],
     queryFn: async () => {
       let { data } = await axios.get(
-        `http://localhost:4000/chats/${trainerId}`
+        `https://fitway-backend.onrender.com/chats/${trainerId}`
       );
       const messagesData = data.allMessages;
       console.log("MESSAGES DATA???", messagesData);
@@ -119,7 +119,7 @@ export default function TrainerChat() {
         console.log("DATA OF TRAINER Message: ", data);
 
         //Send message details to chats Collection in DB
-        let response = await axios.post("http://localhost:4000/chats/", data);
+        let response = await axios.post("https://fitway-backend.onrender.com/chats/", data);
         console.log("Message sent?", response.data.message);
         //** Fetch the reviews again
         chatDataQuery.refetch();
@@ -145,7 +145,7 @@ export default function TrainerChat() {
   const trainerDataQuery = useQuery({
     queryKey: ["trainerData"],
     queryFn: async () => {
-      let { data } = await axios.get("http://localhost:4000/trainerData/");
+      let { data } = await axios.get("https://fitway-backend.onrender.com/trainerData/");
       console.log("Data", data);
       const trainerData = data.trainerData;
       console.log("Trainer Data: ", trainerData);

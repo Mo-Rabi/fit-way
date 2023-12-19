@@ -53,7 +53,7 @@ const app = express();
 
 //! <<< PayPal End >>>
 
-const port = 4000 || process.env.PORT;
+const port = 4000 || 5000 || process.env.PORT;
 
 app.use(cors()); //?app.use(cors({ origin: "*" })); allows all requests from anywhere to my server
 //Start a connection to DB

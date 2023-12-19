@@ -27,7 +27,7 @@ export default function TrainerLogin() {
       console.log(values);
       setIsLoading(true);
       let response = await axios.post(
-        "http://localhost:4000/trainers/login",
+        "https://fitway-backend.onrender.com/trainers/login",
         values
       );
       console.log("Errr", response)

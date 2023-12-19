@@ -31,7 +31,7 @@ export default function CloudinaryWidget() {
           setImageURL(photoURL);
           //getImageURL(photoURL);
           let response = await axios.patch(
-            `http://localhost:4000/${userTyype}/edit/photo`,
+            `https://fitway-backend.onrender.com/${userTyype}/edit/photo`,
             { picture: photoURL }
           );
           console.log("response", response);

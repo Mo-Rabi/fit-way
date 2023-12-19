@@ -119,7 +119,7 @@ export default function UserSignup() {
     // async request which may result error
     try {
       let response = await axios.post(
-        "http://localhost:4000/trainers/register",
+        "https://fitway-backend.onrender.com/trainers/register",
         data
       );
       const serverMsg = response.data.message;

@@ -115,7 +115,7 @@ export default function UserSignup() {
     try {
       console.log("DATA FOR USER SIGN UP ", data);
       let response = await axios.post(
-        "http://localhost:4000/users/register",
+        "https://fitway-backend.onrender.com/users/register",
         data
       );
       console.log("RESPONSE", response);

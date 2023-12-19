@@ -40,7 +40,7 @@ export default function TrainerProfile() {
   const trainerDataQuery = useQuery({
     queryKey: ["trainerData"],
     queryFn: async () => {
-      let { data } = await axios.get("http://localhost:4000/trainerData/");
+      let { data } = await axios.get("https://fitway-backend.onrender.com/trainerData/");
       console.log("Data", data);
       const trainerData = data.trainerData;
       console.log("Trainer Data: ", trainerData);

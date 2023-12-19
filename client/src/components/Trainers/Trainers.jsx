@@ -52,7 +52,7 @@ export default function Trainers() {
   const allTrainerDataQuery = useQuery({
     queryKey: ["allTrainersData"],
     queryFn: async () => {
-      let { data } = await axios.get("http://localhost:4000/trainers");
+      let { data } = await axios.get("https://fitway-backend.onrender.com/trainers");
       const trainers = data.viewAllTrainers;
       return trainers;
     },

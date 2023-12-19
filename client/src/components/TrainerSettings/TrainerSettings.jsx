@@ -60,7 +60,7 @@ export default function TrainerSettings() {
   const trainerSettingsQuery = useQuery({
     queryKey: ["trainerSettings"],
     queryFn: async () => {
-      let { data } = await axios.get("http://localhost:4000/trainerData");
+      let { data } = await axios.get("https://fitway-backend.onrender.com/trainerData");
       const trainerData = data.trainerData;
       console.log("Trainer Data: ", trainerData);
       firstName = trainerData.firstName;
@@ -140,7 +140,7 @@ export default function TrainerSettings() {
     try {
       console.log("Data", data);
       let response = await axios.patch(
-        "http://localhost:4000/trainer/edit",
+        "https://fitway-backend.onrender.com/trainer/edit",
         data
       );
       console.log("Response", response);

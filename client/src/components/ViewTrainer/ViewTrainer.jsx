@@ -26,7 +26,7 @@ export default function ViewTrainer() {
     queryKey: ["reviewData"],
     queryFn: async () => {
       let { data } = await axios.get(
-        `http://localhost:4000/trainer/reviews/${trainerId}`
+        `https://fitway-backend.onrender.com/trainer/reviews/${trainerId}`
       );
       const reviewsData = data.allReviews;
       // console.log("Reviews Data", reviewsData);
@@ -75,7 +75,7 @@ export default function ViewTrainer() {
   const userDataQuery = useQuery({
     queryKey: ["userData"],
     queryFn: async () => {
-      let { data } = await axios.get("http://localhost:4000/userData");
+      let { data } = await axios.get("https://fitway-backend.onrender.com/userData");
       // console.log("USER DATA DESTRUCT: ", data);
       const userData = data.userData;
       console.log("USER Data", userData);
@@ -108,7 +108,7 @@ export default function ViewTrainer() {
 
         //!Send review details to Reviews Collection in DB
         let response = await axios.post(
-          "http://localhost:4000/reviews/new",
+          "https://fitway-backend.onrender.com/reviews/new",
           data
         );
         // console.log("Response", response.data.message);
@@ -163,7 +163,7 @@ export default function ViewTrainer() {
     queryKey: ["trainerProfile", id],
     queryFn: async () => {
       // console.log("ID TO PUT IN REQ", id);
-      let { data } = await axios.get(`http://localhost:4000/trainerData/${id}`);
+      let { data } = await axios.get(`https://fitway-backend.onrender.com/trainerData/${id}`);
       // console.log("Trainer Data", data);
       const trainerData = data.trainerData;
       // console.log("Trainer Data");
