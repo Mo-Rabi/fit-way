@@ -9,7 +9,7 @@ import visa from "../assets/images/payment/visa.png";
 
 export default function Footer() {
   return (
-    <footer className="footer ">
+    <footer className="footer mt-5">
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -25,11 +25,7 @@ export default function Footer() {
                   </p>
                   <ul className="list-unstyled social-icon foot-social-icon mb-0 mt-4">
                     <li className="list-inline-item mb-0">
-                      <a
-                        href="https://1.envato.market/FitWay"
-                        target="_blank"
-                        className="rounded"
-                      >
+                      <a target="_blank" className="rounded">
                         <i
                           className="uil uil-shopping-cart align-middle"
                           title="Buy Now"
@@ -37,11 +33,7 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="list-inline-item mb-0">
-                      <a
-                        href="https://dribbble.com/shreethemes"
-                        target="_blank"
-                        className="rounded"
-                      >
+                      <a target="_blank" className="rounded">
                         <i
                           className="uil uil-dribbble align-middle"
                           title="dribbble"
@@ -49,11 +41,7 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="list-inline-item mb-0">
-                      <a
-                        href="https://www.behance.net/shreethemes"
-                        target="_blank"
-                        className="rounded"
-                      >
+                      <a target="_blank" className="rounded">
                         <i
                           className="uil uil-behance align-middle"
                           title="behance"
@@ -61,11 +49,7 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="list-inline-item mb-0">
-                      <a
-                        href="https://www.facebook.com/shreethemes"
-                        target="_blank"
-                        className="rounded"
-                      >
+                      <a target="_blank" className="rounded">
                         <i
                           className="uil uil-facebook-f align-middle"
                           title="facebook"
@@ -73,11 +57,7 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="list-inline-item mb-0">
-                      <a
-                        href="https://www.instagram.com/shreethemes/"
-                        target="_blank"
-                        className="rounded"
-                      >
+                      <a target="_blank" className="rounded">
                         <i
                           className="uil uil-instagram align-middle"
                           title="instagram"
@@ -85,11 +65,7 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="list-inline-item mb-0">
-                      <a
-                        href="https://twitter.com/shreethemes"
-                        target="_blank"
-                        className="rounded"
-                      >
+                      <a target="_blank" className="rounded">
                         <i
                           className="uil uil-twitter align-middle"
                           title="twitter"
@@ -97,14 +73,8 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="list-inline-item mb-0">
-                      <a
-                        href="mailto:support@shreethemes.in"
-                        className="rounded"
-                      >
-                        <i
-                          className="uil uil-envelope align-middle"
-                          title="email"
-                        />
+                      <a className="rounded">
+                        <i title="email" />
                       </a>
                     </li>
                   </ul>
@@ -244,11 +214,7 @@ export default function Footer() {
                 <p className="mb-0">
                   ©2023 FitWay&nbsp;
                   <i className="mdi mdi-heart text-danger" /> by&nbsp;
-                  <a
-                    href="https://shreethemes.in/"
-                    target="_blank"
-                    className="text-reset"
-                  >
+                  <a target="_blank" className="text-reset">
                     Mo Rabi
                   </a>
                   .
